@@ -1,0 +1,14 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    models:
+      trans_dot:
+        one: trans_dot ar
+        other: Trans_dots ar
+    attributes:
+      trans_dot:
+        name: Name ar
+        description: Desc ar
+        to_this: Do This ar

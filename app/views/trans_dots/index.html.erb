@@ -1,0 +1,43 @@
+<p class="pageheading"><%=t("headings.listing.heading", :model=>t($ARM + "trans_dot", :count=>2) )%></p>
+
+<%= twill_paginate %>
+<table class="data">
+  <tr class="dataheader">
+
+    <th class ="dataheader"><%=t($ARA + 'trans_dot.name') %></th>
+
+    <th class ="dataheader"><%=t($ARA +'trans_dot.description') %></th>
+
+    <th class ="dataheader"><%=t($ARA +'trans_dot.do_this') %></th>
+
+    <th class="linkheader"></th>
+    <th class="linkheader"></th>
+    
+  </tr>
+
+  
+<% cell_class = "data" %>
+<% link_cell_class="link"%>  
+<% @trans_dots.each do |trans_dot| %>
+
+  <tr class = "<%= cycle('dataeven', 'dataodd') %>" >
+  
+      <td class="<%= cell_class %>"><%= trans_dot.name %></td>
+
+  
+      <td class="<%= cell_class %>"><%= trans_dot.description %></td>
+
+  
+      <td class="<%= cell_class %>"><%= trans_dot.do_this %></td>
+
+  
+    
+    <td class="<%= link_cell_class %>"><%= link_to  t('actions.edit'), edit_trans_dots_path(trans_dot) %></td>
+    <td class="<%= link_cell_class %>"><%= link_to t('actions.destroy'),  trans_dot , :confirm => t('messages.delete.are_you_sure', :model => t($ARM + "trans_dot", :count=>1)), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= twill_paginate %>
+
+<br />
+<%= link_to t('headings.new.heading', :model=> t($ARM + 'trans_dot', :count=>1)), new_trans_dots_path %>
